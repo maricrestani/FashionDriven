@@ -10,9 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-
-
-
     <title>Fashion Driven</title>
 </head>
 
@@ -22,29 +19,29 @@
     </header>
 
     <main>
-        <div class="container-escolher-modelo">
-            <div class="escolher-modelo">
+        <div class="container">
+            <div class="opçoes">
 
-                <div class="opçao modelo">
+                <div class="opçao">
                     <p>Escolha o modelo</p>
 
                     <div class="container-caixas">
-                        <div class="caixa">
-                            <div class="container-redondo">
+                        <div class="caixa modelo">
+                            <div class="container-redondo" onclick="selecionarModelo(this)">
                                 <img src="./Images/tshirt.png">
                             </div>
                             <p>T-shirt</p>
                         </div>
 
-                        <div class="caixa">
-                            <div class="container-redondo">
+                        <div class="caixa modelo">
+                            <div class="container-redondo" onclick="selecionarModelo(this)">
                                 <img src="./Images/Camiseta.png">
                             </div>
                             <p>Camiseta</p>
                         </div>
 
-                        <div class="caixa">
-                            <div class="container-redondo">
+                        <div class="caixa modelo">
+                            <div class="container-redondo" onclick="selecionarModelo(this)">
                                 <img src="./Images/Mangalonga.png">
                             </div>
                             <p>Manga longa</p>
@@ -53,26 +50,26 @@
                 </div>
 
 
-                <div class="opçao gola">
+                <div class="opçao">
                     <p>Escolha a gola</p>
 
                     <div class="container-caixas">
-                        <div class="caixa">
-                            <div class="container-redondo">
+                        <div class="caixa gola">
+                            <div class="container-redondo" onclick="selecionarGola(this)">
                                 <img src="./Images/GolaV.png">
                             </div>
                             <p>Gola V</p>
                         </div>
 
-                        <div class="caixa">
-                            <div class="container-redondo">
+                        <div class="caixa gola">
+                            <div class="container-redondo" onclick="selecionarGola(this)">
                                 <img src="./Images/GolaRedonda.png">
                             </div>
-                            <p>Gola Redond</p>
+                            <p>Gola Redonda</p>
                         </div>
 
-                        <div class="caixa">
-                            <div class="container-redondo">
+                        <div class="caixa gola">
+                            <div class="container-redondo" onclick="selecionarGola(this)">
                                 <img src="./Images/GolaPolo.png">
                             </div>
                             <p>Gola Polo</p>
@@ -80,27 +77,26 @@
                     </div>
                 </div>
 
-
-                <div class="opçao tecido">
+                <div class="opçao">
                     <p>Escolha o tecido</p>
 
                     <div class="container-caixas">
-                        <div class="caixa">
-                            <div class="container-redondo">
+                        <div class="caixa tecido">
+                            <div class="container-redondo" onclick="selecionarTecido(this)">
                                 <img src="./Images/Seda.png">
                             </div>
                             <p>Seda</p>
                         </div>
 
-                        <div class="caixa">
-                            <div class="container-redondo">
+                        <div class="caixa tecido">
+                            <div class="container-redondo" onclick="selecionarTecido(this)">
                                 <img src="./Images/Algodão.png">
                             </div>
                             <p>Algodão</p>
                         </div>
 
-                        <div class="caixa">
-                            <div class="container-redondo">
+                        <div class="caixa tecido">
+                            <div class="container-redondo" onclick="selecionarTecido(this)">
                                 <img src="./Images/Poliester.png">
                             </div>
                             <p>Poliéster</p>
@@ -110,11 +106,10 @@
 
                 <div class="img-ref">
                     <p>Imagem de referência</p>
-                    <input type="url" value="Insira o link" />
+                    <input type="url" class="image" placeholder="Insira o link" />
                 </div>
                 <button class="botao">Confirmar pedido</button>
             </div>
-
         </div>
 
         <div class="imagem">
@@ -158,6 +153,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

@@ -36,12 +36,12 @@ main {
 }
 
 
-.container-escolher-modelo {
+.container {
     width: 55%;
     height: 784px;
 }
 
-.escolher-modelo {
+.opçoes {
     width: 400px;
     height: 706px;
     margin: auto;
@@ -55,7 +55,9 @@ main {
 
 .caixa p {
     margin-bottom: 0px;
+    font-size: 16px;
 }
+
 
 p {
     color: #232323;
@@ -186,4 +188,16 @@ footer {
 .pedidos img {
     width: 180px;
     height: 180px;
+}
+
+
+/* css botões selecionados*/
+
+
+.borda-selecionado {
+    border: 3px solid #404EED;
+}
+
+.pedido-confirmado {
+    background-color: #404EED;
 }
