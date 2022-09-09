@@ -106,9 +106,10 @@
 
                 <div class="img-ref">
                     <p>Imagem de referência</p>
-                    <input type="url" class="image" placeholder="Insira o link" />
+                    <input type="url" class="image" onchange="salvarImagem()"
+                        placeholder="Insira o link e aperte enter" />
                 </div>
-                <button class="botao">Confirmar pedido</button>
+                <button class="botao" onclick="getAPI()">Confirmar pedido</button>
             </div>
         </div>
 
