@@ -27,21 +27,21 @@
 
                     <div class="container-caixas">
                         <div class="caixa modelo">
-                            <div class="container-redondo" onclick="selecionarModelo(this)">
+                            <div class="container-redondo" id="t-shirt" onclick="selecionarModelo(this)">
                                 <img src="./Images/tshirt.png">
                             </div>
                             <p>T-shirt</p>
                         </div>
 
                         <div class="caixa modelo">
-                            <div class="container-redondo" onclick="selecionarModelo(this)">
+                            <div class="container-redondo" id="top-tank" onclick="selecionarModelo(this)">
                                 <img src="./Images/Camiseta.png">
                             </div>
                             <p>Camiseta</p>
                         </div>
 
                         <div class="caixa modelo">
-                            <div class="container-redondo" onclick="selecionarModelo(this)">
+                            <div class="container-redondo" id="long" onclick="selecionarModelo(this)">
                                 <img src="./Images/Mangalonga.png">
                             </div>
                             <p>Manga longa</p>
@@ -55,21 +55,21 @@
 
                     <div class="container-caixas">
                         <div class="caixa gola">
-                            <div class="container-redondo" onclick="selecionarGola(this)">
+                            <div class="container-redondo" id="v-neck" onclick="selecionarGola(this)">
                                 <img src="./Images/GolaV.png">
                             </div>
                             <p>Gola V</p>
                         </div>
 
                         <div class="caixa gola">
-                            <div class="container-redondo" onclick="selecionarGola(this)">
+                            <div class="container-redondo" id="round" onclick="selecionarGola(this)">
                                 <img src="./Images/GolaRedonda.png">
                             </div>
                             <p>Gola Redonda</p>
                         </div>
 
                         <div class="caixa gola">
-                            <div class="container-redondo" onclick="selecionarGola(this)">
+                            <div class="container-redondo" id="polo" onclick="selecionarGola(this)">
                                 <img src="./Images/GolaPolo.png">
                             </div>
                             <p>Gola Polo</p>
@@ -82,21 +82,21 @@
 
                     <div class="container-caixas">
                         <div class="caixa tecido">
-                            <div class="container-redondo" onclick="selecionarTecido(this)">
+                            <div class="container-redondo" id="silk" onclick="selecionarTecido(this)">
                                 <img src="./Images/Seda.png">
                             </div>
                             <p>Seda</p>
                         </div>
 
                         <div class="caixa tecido">
-                            <div class="container-redondo" onclick="selecionarTecido(this)">
+                            <div class="container-redondo" id="cotton" onclick="selecionarTecido(this)">
                                 <img src="./Images/Algodão.png">
                             </div>
                             <p>Algodão</p>
                         </div>
 
                         <div class="caixa tecido">
-                            <div class="container-redondo" onclick="selecionarTecido(this)">
+                            <div class="container-redondo" id="polyester" onclick="selecionarTecido(this)">
                                 <img src="./Images/Poliester.png">
                             </div>
                             <p>Poliéster</p>
@@ -109,7 +109,7 @@
                     <input type="url" class="image" onchange="salvarImagem()"
                         placeholder="Insira o link e aperte enter" />
                 </div>
-                <button class="botao" onclick="getAPI()">Confirmar pedido</button>
+                <button class="botao" onclick="encomendarBlusa()">Confirmar pedido</button>
             </div>
         </div>
 
@@ -123,30 +123,6 @@
         <p class="titulo-footer">Últimos pedidos</p>
 
         <div class="container-pedidos">
-            <div class="pedidos">
-                <img src="./Images/Blusa1.png">
-                <p> <strong>Criador: </strong>Mariana</p>
-            </div>
-
-            <div class="pedidos">
-                <img src="./Images/Blusa2.png">
-                <p> <b>Criador: </b>Mariana</p>
-            </div>
-
-            <div class="pedidos">
-                <img src="./Images/Blusa3.png">
-                <p> <b>Criador: </b>Mariana</p>
-            </div>
-
-            <div class="pedidos">
-                <img src="./Images/Blusa4.png">
-                <p> <b>Criador: </b>Mariana</p>
-            </div>
-
-            <div class="pedidos">
-                <img src="./Images/Blusa5.png">
-                <p> <b>Criador: </b>Mariana</p>
-            </div>
 
         </div>
 

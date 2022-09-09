@@ -162,6 +162,9 @@ footer {
 .container-pedidos {
     display: flex;
     justify-content: center;
+    overflow: scroll;
+    margin-left: 140px;
+    margin-right: 140px;
 }
 
 .pedidos {
@@ -175,9 +178,10 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
-.pedidos p {
+.pedidos h2 {
     font-family: 'Roboto', sans-serif;
     color: #232323;
     font-weight: 700px;

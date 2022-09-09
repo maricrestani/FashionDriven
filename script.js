@@ -1,66 +1,71 @@
-const nome = prompt("Qual é o seu nome?")
+const nome = prompt("Qual é o seu nome?");
+let modelo, gola, tecido, imagem;
 
-const API = 'https://mock-api.driven.com.br/api/v4/shirts-api/shirts';
+getAPI()
+
 
 function getAPI() {
 
-    const promise = axios.get(`${API}`);
-    promise.then(confirmarEncomenda);
+    console.log("getAPI foi chamada")
+
+    const promise = axios.get('https://mock-api.driven.com.br/api/v4/shirts-api/shirts');
+    promise.then(renderizarBlusa);
     //  promise.catch(erro);
 }
 
+function renderizarBlusa(dados) {
 
-let modelo, gola, tecido, imagem;
+    console.log("renderizarBlusa foi chamada")
 
-const model = ["t-shirt", "long", "top-tank"];
-const neck = ["v-neck", "round", "polo"];
-const material = ["silk", "cotton", "polyester"];
+    let caixa = document.querySelector('.container-pedidos');
+
+    for (let i = 0; i < 10; i++) {
+
+        let blusa = dados.data[i];
+
+        caixa.innerHTML +=
+            ` <div class="pedidos" id="${blusa.id}">
+            <img src='${blusa.image}'>
+            <h2><strong>Criador: </stong>${blusa.owner}</h2>
+        </div>`
+    }
+}
 
 
-/*
 function encomendarBlusa() {
 
-    const promise = axios.post(`${API}`);
+    let pedido =
+    {
+        model: "",
+        neck: "",
+        material: "",
+        image: "",
+        owner: "",
+        author: ""
+    };
+
+    pedido.model = modelo;
+    pedido.neck = gola;
+    pedido.material = tecido;
+    pedido.image = imagem;
+    pedido.owner = nome;
+    pedido.author = nome;
+
+
+    console.log("esse é o pedido", pedido)
+
+    const promise = axios.post('https://mock-api.driven.com.br/api/v4/shirts-api/shirts', pedido);
     promise.then(confirmarEncomenda);
     promise.catch(erro);
-
-    {
-        "model": "t-shirt" | "long" | "top-tank",
-            "neck": "v-neck" | "round" | "polo",
-                "material": "silk" | "cotton" | "polyester",
-                    "image": string no formato de url,
-                        "owner": string,
-                            "author": string
-    }
-
-}
-
-function entrarNaSala() {
-
-    novoNome = {
-        name: nome
-    }
-
-    const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', novoNome);
-
-    promessa.then(pegarDadosChat);
-    promessa.catch(pedirNovoNome);
 }
 
 
 function erro(error) {
-    if (erro.response.status === 422) {
+    if (error.response.status === 422) {
         alert('****detalhar erro aqui****');
     }
 }
 
-
-function erro(error) {
-    if (erro.response.status === 422) {
-        alert('****detalhar erro aqui****');
-    }
-}
-*/
 
 
 function selecionarModelo(modeloSelecionado) {
@@ -73,7 +78,7 @@ function selecionarModelo(modeloSelecionado) {
 
     modeloSelecionado.classList.add('borda-selecionado');
 
-    modelo = modeloSelecionado;
+    modelo = modeloSelecionado.id;
 
     ativarBotaoFecharPedido();
 }
@@ -89,7 +94,7 @@ function selecionarGola(golaSelecionada) {
 
     golaSelecionada.classList.add('borda-selecionado');
 
-    gola = golaSelecionada
+    gola = golaSelecionada.id
 
     ativarBotaoFecharPedido();
 }
@@ -105,7 +110,7 @@ function selecionarTecido(tecidoSelecionado) {
 
     tecidoSelecionado.classList.add('borda-selecionado');
 
-    tecido = tecidoSelecionado
+    tecido = tecidoSelecionado.id
 
     ativarBotaoFecharPedido();
 }
@@ -139,6 +144,8 @@ function ativarBotaoFecharPedido() {
 
 function confirmarEncomenda() {
     alert('Sua encomenda foi confirmada!')
+
+    //criar um textinho com o resumo do pedido
 }
 
 
