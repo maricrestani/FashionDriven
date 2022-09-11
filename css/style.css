@@ -143,10 +143,12 @@ button {
 }
 
 footer {
+    /*position: relative;*/
     background-color: #F2F2F2;
     width: 100%;
     height: 342px;
     padding-top: 30px;
+    width: 100%;
 }
 
 .titulo-footer {
@@ -158,13 +160,16 @@ footer {
     margin-bottom: 15px;
 }
 
-
 .container-pedidos {
+    background-color: red;
+    /* position: absolute;*/
+    width: 1074px;
     display: flex;
     justify-content: center;
-    overflow: scroll;
-    margin-left: 140px;
-    margin-right: 140px;
+    margin-left: 130px;
+    margin-right: 130px;
+    /*overflow-x: scroll;*/
+    padding-left: 200px;
 }
 
 .pedidos {
@@ -178,7 +183,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .pedidos h2 {

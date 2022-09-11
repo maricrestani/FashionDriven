@@ -1,21 +1,17 @@
 const nome = prompt("Qual é o seu nome?");
-let modelo, gola, tecido, imagem;
+let modelo, gola, tecido, imagem, identificador;
+
 
 getAPI()
 
-
 function getAPI() {
-
-    console.log("getAPI foi chamada")
 
     const promise = axios.get('https://mock-api.driven.com.br/api/v4/shirts-api/shirts');
     promise.then(renderizarBlusa);
-    //  promise.catch(erro);
 }
 
-function renderizarBlusa(dados) {
 
-    console.log("renderizarBlusa foi chamada")
+function renderizarBlusa(dados) {
 
     let caixa = document.querySelector('.container-pedidos');
 
@@ -26,7 +22,7 @@ function renderizarBlusa(dados) {
         caixa.innerHTML +=
             ` <div class="pedidos" id="${blusa.id}">
             <img src='${blusa.image}'>
-            <h2><strong>Criador: </stong>${blusa.owner}</h2>
+            <h2><b>Criador: </b>${blusa.owner}</h2>
         </div>`
     }
 }
@@ -51,18 +47,17 @@ function encomendarBlusa() {
     pedido.owner = nome;
     pedido.author = nome;
 
-
     console.log("esse é o pedido", pedido)
 
     const promise = axios.post('https://mock-api.driven.com.br/api/v4/shirts-api/shirts', pedido);
     promise.then(confirmarEncomenda);
-    promise.catch(erro);
+    promise.catch(erroEncomenda);
 }
 
 
-function erro(error) {
+function erroEncomenda(error) {
     if (error.response.status === 422) {
-        alert('****detalhar erro aqui****');
+        alert("Ops, não conseguimos processar sua encomenda");
     }
 }
 
@@ -134,18 +129,21 @@ function ativarBotaoFecharPedido() {
         button.classList.add('pedido-confirmado')
         button.disabled = false;
     }
-
-    console.log(nome);
-    console.log(modelo);
-    console.log(tecido);
-    console.log(gola);
-    console.log(imagem);
 }
 
 function confirmarEncomenda() {
     alert('Sua encomenda foi confirmada!')
-
     //criar um textinho com o resumo do pedido
+
+    getAPI();
 }
 
 
+
+/*
+- Encomendar blusa criada por alguém
+    - [ ]  Ao clicar em uma blusa na lista "últimos pedidos" deve aparecer um `confirm()` e caso o usuário aceite. Deve fazer uma encomenda com os dados da blusa clicada.
+
+###
+
+*/
