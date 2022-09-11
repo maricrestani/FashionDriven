@@ -161,9 +161,8 @@ footer {
 }
 
 .container-pedidos {
-    /* position: absolute;*/
-    background-color: red;
-    width: 1074px;
+    position: absolute;
+    width: 900px;
     display: flex;
     justify-content: center;
     margin-left: 140px;
@@ -173,6 +172,9 @@ footer {
 }
 
 .pedidos {
+    position: relative;
+    left: 320px;
+    right: 50px;
     background-color: #ffffff;
     width: 202px;
     height: 236px;

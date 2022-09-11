@@ -137,8 +137,9 @@ function confirmarEncomenda() {
     getAPI();
 }
 
-function encomendarBlusaPreviamenteCriada() {
+function encomendarBlusaPreviamenteCriada(blusinha) {
 
     confirm("Deseja encomendar esta blusa?")
+    console.log(blusinha)
 }
 
