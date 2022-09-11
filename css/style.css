@@ -31,7 +31,7 @@ main {
 }
 
 .imagem img {
-    width: 507px;
+    width: 90%;
     height: 602px;
 }
 
@@ -161,14 +161,14 @@ footer {
 }
 
 .container-pedidos {
-    background-color: red;
     /* position: absolute;*/
+    background-color: red;
     width: 1074px;
     display: flex;
     justify-content: center;
-    margin-left: 130px;
-    margin-right: 130px;
-    /*overflow-x: scroll;*/
+    margin-left: 140px;
+    margin-right: 140px;
+    overflow-x: scroll;
     padding-left: 200px;
 }
 
@@ -183,6 +183,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .pedidos h2 {
@@ -191,6 +192,10 @@ footer {
     font-weight: 700px;
     font-size: 20px;
     margin-top: 8px;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .pedidos img {

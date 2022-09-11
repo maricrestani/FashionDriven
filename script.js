@@ -20,7 +20,7 @@ function renderizarBlusa(dados) {
         let blusa = dados.data[i];
 
         caixa.innerHTML +=
-            ` <div class="pedidos" id="${blusa.id}">
+            ` <div class="pedidos" onclick="encomendarBlusaPreviamenteCriada(this)" id="${blusa.id}">
             <img src='${blusa.image}'>
             <h2><b>Criador: </b>${blusa.owner}</h2>
         </div>`
@@ -133,17 +133,12 @@ function ativarBotaoFecharPedido() {
 
 function confirmarEncomenda() {
     alert('Sua encomenda foi confirmada!')
-    //criar um textinho com o resumo do pedido
 
     getAPI();
 }
 
+function encomendarBlusaPreviamenteCriada() {
 
+    confirm("Deseja encomendar esta blusa?")
+}
 
-/*
-- Encomendar blusa criada por alguém
-    - [ ]  Ao clicar em uma blusa na lista "últimos pedidos" deve aparecer um `confirm()` e caso o usuário aceite. Deve fazer uma encomenda com os dados da blusa clicada.
-
-###
-
-*/
