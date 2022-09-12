@@ -1,5 +1,5 @@
 const nome = prompt("Qual é o seu nome?");
-let modelo, gola, tecido, imagem, identificador;
+let modelo, gola, tecido, imagem;
 
 
 getAPI()
@@ -15,6 +15,8 @@ function renderizarBlusa(dados) {
 
     let caixa = document.querySelector('.container-pedidos');
 
+    caixa.innerHTML = 0
+
     for (let i = 0; i < 10; i++) {
 
         let blusa = dados.data[i];
@@ -22,7 +24,7 @@ function renderizarBlusa(dados) {
         caixa.innerHTML +=
             ` <div class="pedidos" onclick="encomendarBlusaPreviamenteCriada(this)" id="${blusa.id}">
             <img src='${blusa.image}'>
-            <h2><b>Criador: </b>${blusa.owner}</h2>
+            <h2><span class="bold">Criador: </span>${blusa.owner}</h2>
         </div>`
     }
 }

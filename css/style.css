@@ -171,6 +171,12 @@ footer {
     padding-left: 200px;
 }
 
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
 .pedidos {
     position: relative;
     left: 320px;
@@ -194,6 +200,7 @@ footer {
     font-weight: 700px;
     font-size: 20px;
     margin-top: 8px;
+    word-break: break-all;
 }
 
 .bold {
