@@ -1,8 +1,12 @@
-const nome = prompt("Qual é o seu nome?");
-let modelo, gola, tecido, imagem;
+let nome, modelo, gola, tecido, imagem, identidade;
 
-
+perguntarNome()
 getAPI()
+
+
+function perguntarNome() {
+    nome = prompt("Qual é o seu nome?");
+}
 
 function getAPI() {
 
@@ -22,13 +26,23 @@ function renderizarBlusa(dados) {
         let blusa = dados.data[i];
 
         caixa.innerHTML +=
-            ` <div class="pedidos" onclick="encomendarBlusaPreviamenteCriada(this)" id="${blusa.id}">
+            ` <div class="pedidos" onclick="encomendarBlusaPreviamenteCriada(this)" id="${i}" >
             <img src='${blusa.image}'>
             <h2><span class="bold">Criador: </span>${blusa.owner}</h2>
         </div>`
     }
 }
 
+
+function verificarNome() {
+    console.log("essa função foi chamada")
+    if (nome === "") {
+        nome = prompt("Por favor, insira um nome")
+        encomendarBlusa()
+    } else {
+        encomendarBlusa()
+    }
+}
 
 function encomendarBlusa() {
 
@@ -54,6 +68,7 @@ function encomendarBlusa() {
     const promise = axios.post('https://mock-api.driven.com.br/api/v4/shirts-api/shirts', pedido);
     promise.then(confirmarEncomenda);
     promise.catch(erroEncomenda);
+
 }
 
 
@@ -62,7 +77,6 @@ function erroEncomenda(error) {
         alert("Ops, não conseguimos processar sua encomenda");
     }
 }
-
 
 
 function selecionarModelo(modeloSelecionado) {
@@ -126,11 +140,12 @@ button.disabled = true;
 
 function ativarBotaoFecharPedido() {
 
-    if (modelo !== undefined && gola !== undefined && tecido !== undefined && imagem !== undefined) {
+    if (nome !== null && modelo !== undefined && gola !== undefined && tecido !== undefined && imagem !== undefined) {
 
         button.classList.add('pedido-confirmado')
         button.disabled = false;
     }
+
 }
 
 function confirmarEncomenda() {
@@ -139,9 +154,39 @@ function confirmarEncomenda() {
     getAPI();
 }
 
-function encomendarBlusaPreviamenteCriada(blusinha) {
 
+function encomendarBlusaPreviamenteCriada(blusaPrevia) {
     confirm("Deseja encomendar esta blusa?")
-    console.log(blusinha)
+
+    identidade = blusaPrevia.id;
+
+    console.log(blusaPrevia)
+    console.log(identidade)
+    getAPI2();
+
+}
+
+function getAPI2() {
+
+    const promise = axios.get('https://mock-api.driven.com.br/api/v4/shirts-api/shirts');
+    promise.then(finalizarEncomendaBlusaPrevia);
+}
+
+function finalizarEncomendaBlusaPrevia(dados) {
+
+
+    let objeto = dados.data[identidade]
+    let author = objeto.owner
+
+    objeto.owner = nome;
+
+    objeto.author = author;
+    delete objeto.id;
+    console.log(objeto)
+
+    const promise = axios.post('https://mock-api.driven.com.br/api/v4/shirts-api/shirts', objeto);
+
+    alert("Sua blusa foi encomendada!")
+
 }
 
